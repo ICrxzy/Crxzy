@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Casa Del Crxzy</title>
     <link rel="icon" href="Assets/Images/logo.png" type="image/x-icon">
@@ -17,17 +17,25 @@
       <div class="neon-line right"></div>
     </div>
     <div class="animated-background"></div>
-    <section id="banner"> <h1>This site is still under construction.</h1></section>
+    <section id="banner"><h1>This site is still under construction.</h1></section>
 
     <header><nav>
-        <ul id="nav-btns">
-          <li><a class="active">Home</a></li>
-          <li><a href="artwork.html">Artwork</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul></nav><img src="Assets/Images/logo.png" alt="Logo" class="logo"></header>
-
+      <ul id="nav-btns">
+        <li><a class="active">Home</a></li>
+        <li><a href="artwork.html">Artwork</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#adminMenu" id="loginButton">Admin</a></li>
+      </ul></nav><img src="Assets/Images/logo.png" alt="Logo" class="logo">
+    </header>
+    <div id="adminMenu" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <button id="changeCredentials">Change Credentials</button>
+        <button id="logoutButton">Logout</button>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="card"><h1>Crxzy's Graphic Design and Project Repository</h1></div>
       <section class="columns">
