@@ -90,3 +90,21 @@ function getCredentials() {
   }
   return { username: 'admin', password: 'admin' };
 }
+document.getElementById("fileUploadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("upload.php", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data);
+      alert("File uploaded successfully!");
+    })
+    .catch(error => {
+      console.error(error);
+      alert("Error uploading file.");
+    });
+});
+
