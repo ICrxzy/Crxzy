@@ -1,7 +1,10 @@
-const header = document.querySelector('header');
 const banner = document.querySelector('#banner');
-let isScrolling = false;
-let scrollTimeout;
+const loginButton = document.getElementById('loginButton');
+const logoutButton = document.getElementById('logoutButton');
+const changeCredentialsButton = document.getElementById('changeCredentials');
+const closeButton = document.querySelector('.close');
+let credentials = getCredentials();
+let userLoggedIn = false;
 
 // Function to hide the banner
 function hideBanner() {
@@ -11,7 +14,7 @@ function hideBanner() {
 // Show the banner on page load
 window.addEventListener('load', function() {
   banner.classList.add('visible');
-  setTimeout(hideBanner, 10000); // Hide banner after Xms
+  //setTimeout(hideBanner, 10000); // Hide banner after 10 seconds
 });
 
 // Handle Nav Buttons
@@ -24,30 +27,66 @@ document.addEventListener('DOMContentLoaded', function() {
       link.classList.add('active'); // Add the 'active' class to the current page link
     }
   });
+
+  loginButton.addEventListener('click', () => {
+    if (userLoggedIn) {
+      toggleAdminMenu();
+    } else {
+      login();
+    }
+  });
+
+  logoutButton.addEventListener('click', () => {
+    userLoggedIn = false;
+    loginButton.innerText = 'Login';
+    closeAdminMenu();
+    alert('Logged Out');
+  });
+
+  changeCredentialsButton.addEventListener('click', () => {
+    const newUsername = prompt('Enter New Username:');
+    const newPassword = prompt('Enter New Password:');
+    saveCredentials(newUsername, newPassword);
+    alert('Credentials Updated');
+  });
+
+  closeButton.addEventListener('click', closeAdminMenu);
 });
 
-// Handle scroll event
-window.addEventListener('scroll', function() {
-  if (window.pageYOffset > banner.offsetHeight) {
-    header.style.top = '-100'; // Adjust header's top position when banner scrolls away
+function login() {
+  const username = prompt('Enter Username:');
+  const password = prompt('Enter Password:');
+
+  if (username === credentials.username && password === credentials.password) {
+    userLoggedIn = true;
+    document.getElementById('loginButton').innerText = 'Admin Panel';
   } else {
-    header.style.top = '0px'; // Original top position accounting for banner height
+    alert('Invalid Credentials');
   }
+}
 
-  if (window.pageYOffset > 0) {
-    hideBanner(); // Hide the banner when the user scrolls
+function toggleAdminMenu() {
+  const adminMenu = document.getElementById('adminMenu');
+  adminMenu.style.display = adminMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+function closeAdminMenu() {
+  document.getElementById('adminMenu').style.display = 'none';
+}
+
+function saveCredentials(username, password) {
+  const encryptedPassword = btoa(password); // Base64 encoding for simplicity
+  const newCredentials = { username: username, password: encryptedPassword };
+  localStorage.setItem('credentials', JSON.stringify(newCredentials));
+  credentials = newCredentials;
+}
+
+function getCredentials() {
+  const savedCredentials = localStorage.getItem('credentials');
+  if (savedCredentials) {
+    const parsedCredentials = JSON.parse(savedCredentials);
+    parsedCredentials.password = atob(parsedCredentials.password); // Decode the password
+    return parsedCredentials;
   }
-
-  if (!isScrolling) {
-    header.style.transition = 'opacity 0.3s ease-in-out';
-    header.classList.remove('hidden');
-    isScrolling = true;
-  }
-
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(function() {
-    header.style.transition = 'opacity 0.3s ease-in-out';
-    header.classList.add('hidden');
-    isScrolling = false;
-  }, 200);
-});
+  return { username: 'admin', password: 'admin' };
+}
