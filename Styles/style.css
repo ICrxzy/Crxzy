@@ -4,6 +4,7 @@
   --Accent: yellow;
   --PrimaryTrans: rgba(7, 1, 10, 0.45);
   --SecondaryTrans: rgba(23, 6, 30, 0.45);
+  --AccentTrans: rgba(255, 255, 0, 0.33);
 }
 * {
   color-scheme: light only;
@@ -46,7 +47,7 @@ body {
   max-width: 5000px;
   height: 5000px;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 9997;
 }
 
 /* Neon line styling */
@@ -56,7 +57,6 @@ body {
   height: 1500px;
   background: var(--Accent);
   box-shadow: 0 0 10px yellow, 0 0 30px yellow, 0 0 100px yellow;
-
   animation: neon-animation 1s infinite alternate;
 }
 a {
@@ -83,7 +83,6 @@ a {
     box-shadow: 0 0 10px var(--Accent), 0 0 30px var(--Accent), 0 0 100px var(--Accent);
   }
 }
-
 /* Media query to hide neon lines on mobile devices */
 @media (max-width: 768px) {
   .neon-line {
@@ -102,24 +101,12 @@ header {
   width: 100%;
   border-bottom-left-radius:25px;
   border-bottom-right-radius: 25px;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 8px 10px var(--AccentTrans);
   z-index: 9999;
 }
-
-.logo {
-  overflow: visible;
-  right: -25px;
-  width: 90px;
-  height: 90px;
-}
-.artpiece {
-  display: flex;
-  max-width: 320px;
-  max-height: 240px;
-}
 nav {
+  margin-left: 25px;
   display: flex;
-  align-items: center;
   height: 90%;
   width: 100%;
 }
@@ -133,17 +120,17 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 2px;
+  margin: 0 25px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 10px;
-  height: 35px;
+  padding-right: 20px;
+  padding-top: 10px;
+  height: 80%;
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
 }
 
@@ -160,7 +147,12 @@ nav ul li a:before {
 nav ul li a:hover {
   color: var(--Accent);
 }
-
+.logo {
+  overflow: visible;
+  margin-right: 50%;
+  width: 90px;
+  height: 90px;
+}
 div {
   flex: 1;
   width: 90%;
@@ -211,16 +203,16 @@ div {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: -100px; /* Start off-screen */
+  bottom: -100px; /* Start off-screen */
   left: 0;
   right: 0;
   z-index: 9997;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.45);
-  transition: top 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
 }
 
 #banner.visible {
-  top: 50px;
+  bottom: 25px;
 }
 
 .wrapper {
@@ -255,18 +247,45 @@ div {
     gap: 10px;
     padding: 10px;
 }
-
-.tile {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.hidden {
+    display: none;
 }
 
-.tile img, .tile video {
-    width: 100%;
-    height: auto;
-    display: block;
+/* Modal styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    align-content: center;
+    z-index: 9999;
+    left: 25%;
+    top: 0;
+    width: 50%;
+    height: 80%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--Primary);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 .card {
   width: 100%;
@@ -308,7 +327,7 @@ footer {
   height: 24px;
   background-color: var(--Primary);
   text-align: center;
-  box-shadow: 0 -8px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 -8px 10px var(--AccentTrans);
   color: white;
   z-index: 9999;
 }
