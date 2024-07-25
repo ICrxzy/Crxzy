@@ -1,10 +1,17 @@
 :root {
+  /* Pallete */
   --Primary: #17061E;
   --Secondary: #07010A;
   --Accent: yellow;
+
+  /* Tranparent Colors */
   --PrimaryTrans: rgba(7, 1, 10, 0.45);
   --SecondaryTrans: rgba(23, 6, 30, 0.45);
   --AccentTrans: rgba(255, 255, 0, 0.33);
+
+  /* Text Colors */
+  --TextActiveColor: yellow;
+  --TextColor: white;
 }
 * {
   color-scheme: light only;
@@ -165,7 +172,7 @@ div {
 }
 
 .active {
-  color: yellow; /* Or any other style you prefer for the active state */
+  color: var(--TextActiveColor); /* Or any other style you prefer for the active state */
 }
 .animated-background {
     position: fixed;
@@ -211,6 +218,13 @@ div {
   transition: bottom 0.5s ease-in-out;
 }
 
+#pageSelect{
+  background-color: var(--Primary);
+  color: var(--TextActiveColor);
+  & option {
+    color: var(--TextColor)
+  };
+}
 #banner.visible {
   bottom: 25px;
 }
@@ -253,39 +267,64 @@ div {
 
 /* Modal styles */
 .modal {
-    display: none; /* Initially hidden */
+    display: hidden;
     position: fixed;
-    align-content: center;
     z-index: 9999;
-    left: 25%;
-    top: 0;
     width: 50%;
     height: 80%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-    background-color: var(--Primary);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    background-color: var(--PrimaryTrans);
+    border-radius: 20px;
+    border-top: 2px solid var(--Accent);
+    border-left: 2px solid var(--Accent);
+    border-right: 2px solid var(--Accent);
+    border-bottom: 14px double var(--Accent);
+    backdrop-filter: blur(8px);
     width: 80%;
     max-width: 500px;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: fixed;
+    top: -17px;
+    color: var(--AccentTrans);
+    font-size: 48px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--Accent);
     text-decoration: none;
     cursor: pointer;
+}
+.btn {
+  width: 150px;
+  height: 32px;
+  background-color: var(--Primary);
+  color: var(--TextColor);
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--Accent);
+    color: var(--Primary);
+    border-radius: 10px;
+  }
+}
+#fileToUpload {
+  width: max-content;
+  height: max-content;
+  background-color: var(--Primary);
+  text-color: var(--TextColor);
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--Accent);
+    color: var(--Primary);
+    border-radius: 10px;
+  }
 }
 .card {
   width: 100%;
@@ -296,8 +335,7 @@ div {
   margin: 15px;
   padding: 10px;
   border-radius: 20px;
-  border-bottom: 6px double;
-  border-color: var(--Accent);
+  border-bottom: 6px double var(--Accent);
   backdrop-filter: blur(2px);
 }
 .card:hover {
