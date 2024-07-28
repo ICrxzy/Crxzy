@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Casa Del Crxzy</title>
-    <link rel="icon" href="Assets/Images/logo.png" type="image/x-icon">
-    <link rel="shortcut icon" href="Assets/Images/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles/style.css">
-  </head>
-
-  <body>
-    <!-- Elements to be changed by CSS -->
-    <div class="neon-lines">
-      <div class="neon-line left"></div>
-      <div class="neon-line right"></div>
-    </div>
-    <div class="animated-background"></div>
-    <section id="banner"><h1>This site is still under construction.</h1></section>
-
-    <header><nav>
-      <ul id="nav-btns">
-        <li><a class="active">Home</a></li>
-        <li><a href="artwork.html">Artwork</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#adminMenu" id="loginButton" class="hidden">Admin</a></li>
-      </ul></nav><img src="Assets/Images/logo.png" alt="Logo" class="logo">
-    </header>
-    <div class="modal hidden" id="adminMenu">
-      <div class="modal-content">
-        <button id="changeCredentials" class="btn">Change Credentials</button>
-        <form id="fileUploadForm" enctype="multipart/form-data" method="post" action="upload.php">
-          <select name="pageSelect" id="pageSelect">
-            <option value="index.html">Home</option>
-            <option value="artwork.html">Artwork</option>
-            <option value="services.html">Services</option>
-            <option value="projects.html">Projects</option>
-            <option value="contact.html">Contact</option>
-          </select>
-          <input type="file" name="fileToUpload" class="fileToUpload">
-          <button type="submit" class="btn">Upload File</button>
-        </form>
-        <button id="logoutButton" class="btn">Logout</button>
-        <span class="close">&times;</span>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="card"><h1>Crxzy's Graphic Design and Project Repository</h1></div>
-      <section class="columns">
-        <div class='card'>
-          <h2>Branding</h2>
-          <p>
-            Elevate your brand with stunning logo and banner designs, or custom-branded icons.
-            I create high-quality assets meticulously tailored to your brand's unique needs.
-            Specializing in niche branding, I ensure your vision stands out.
-          </p>
+    <head>
+        <title>Casa Del Crxzy</title>
+        <link rel="icon" href="Assets/Images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="Assets/Images/logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Styles/style.css">
+    </head>
+    <body>
+        <!-- Elements to be changed by CSS -->
+        <div class="neon-lines">
+            <div class="neon-line left"></div>
+            <div class="neon-line right"></div>
         </div>
-        <div class='card'>
-          <h2>Stream Assets</h2>
-          <p>
-            High Quality Livestream assets including Entire Scene collections,
-            Smooth Stinger Transitions, Overlays, Animated Graphics, Custom Widgets!
-          </p>
-        </div>
-        <div class='card'>
-          <h2>Repository</h2><p>
-            Visit my <a href="projects.html">Project Repository</a> to view, purchase, and download
-            my various projects. Here I store all of my work from past and present, ensuring my work
-            is backed up and safe.
-          </p>
-        </div>
-      </section>
-      <div class='card'><h1>The Creator</h1></div>
-      <div class='card'><p>
-        I'm Crxzy, a 21 year old Graphic Designer stepping out into the freelance world.
-        This site aims to track and store my projects, and portfolio.
-        I offer my graphic design services to anyone who may need them.
-        <br><br>
-        I have many projects buried in many computers over the past 2 decades.
-        As i dig these projects up, ill need a place to store them.
-        Any projects i may start in the future will also be uploaded here.
-        <br><br>
-        My projects vary wildly. It all depends on how passionate i get.
-        I may have created a very basic game at one point but I'm no game developer.
-        I have at least some experience in Java, JavaScript, Lua, Python, ActionScript, C#, HTML, and CSS.
-        I have the ability to create basic looped soundtracks and sound effects.
-        I also have some experience in 3D Modelling with blender and offer 3D Model rendering services.</p></div>
-    </div>
+        <div class="animated-background"></div>
+        <section id="banner"><h1>This site is still under construction.</h1></section>
 
-    <footer><p class="copy-symbol">&copy; Crxzy 2024</p></footer>
-    <script src="Scripts/script.js"></script>
-  </body>
+        <header><nav>
+            <ul id="nav-btns">
+            <li><a class="active">Home</a></li>
+            <li><a href="artwork.html">Artwork</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#adminMenu" id="loginButton" class="hidden">Admin</a></li></ul></nav>
+            <img src="Assets/Images/logo.png" alt="Logo" class="logo">
+        </header>
+        <div class="modal hidden" id="adminMenu">
+            <div class="modal-content">
+                <button id="changeCredentials" class="btn">Change Credentials</button>
+                <form id="fileUploadForm" enctype="multipart/form-data" method="post" action="upload.php">
+                    <select name="pageSelect" id="pageSelect">
+                        <option value="index.html">Home</option>
+                        <option value="artwork.html">Artwork</option>
+                        <option value="services.html">Services</option>
+                        <option value="projects.html">Projects</option>
+                        <option value="contact.html">Contact</option>
+                    </select>
+                    <input type="file" name="fileToUpload" class="fileToUpload">
+                    <button type="submit" class="btn">Upload File</button>
+                </form>
+                <button id="logoutButton" class="btn">Logout</button>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="card"><h1>Crxzy's Graphic Design and Project Repository</h1></div>
+            <section class="columns">
+                <div class='card'>
+                    <h2>Branding</h2><p>
+                        Elevate your brand with stunning logo and banner designs, or custom-branded icons.
+                        I create high-quality assets meticulously tailored to your brand's unique needs.
+                        Specializing in niche branding, I ensure your vision stands out.
+                    </p>
+                </div>
+                <div class='card'>
+                    <h2>Stream Assets</h2><p>
+                        High Quality Livestream assets including Entire Scene collections,
+                        Smooth Stinger Transitions, Overlays, Animated Graphics, Custom Widgets!
+                    </p>
+                </div>
+                <div class='card'>
+                    <h2>Repository</h2><p>
+                      Visit my <a href="projects.html">Project Repository</a> to view, purchase, and download
+                      my various projects. Here I store all of my work from past and present, ensuring my work
+                      is backed up and safe.
+                    </p>
+                </div>
+            </section>
+        <div class='card'><h1>The Creator</h1></div>
+        <div class='card'><p>
+            I'm Crxzy, a 21 year old Graphic Designer stepping out into the freelance world.
+            This site aims to track and store my projects, and portfolio.
+            I offer my graphic design services to anyone who may need them.
+            <br><br>
+            I have many projects buried in many computers over the past 2 decades.
+            As i dig these projects up, ill need a place to store them.
+            Any projects i may start in the future will also be uploaded here.
+            <br><br>
+            My projects vary wildly. It all depends on how passionate i get.
+            I may have created a very basic game at one point but I'm no game developer.
+            I have at least some experience in Java, JavaScript, Lua, Python, ActionScript, C#, HTML, and CSS.
+            I have the ability to create basic looped soundtracks and sound effects.
+            I also have some experience in 3D Modelling with blender and offer 3D Model rendering services.</p></div>
+        </div>
+        <footer><p class="copy-symbol">&copy; Crxzy 2024</p></footer>
+        <script src="Scripts/script.js"></script>
+    </body>
 </html>

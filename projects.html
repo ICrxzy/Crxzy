@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Casa Del Crxzy</title>
-    <link rel="icon" href="Assets/Images/logo.png" type="image/x-icon">
-    <link rel="shortcut icon" href="Assets/Images/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles/style.css">
-  </head>
-  <body>
-    <!-- Elements to be changed by CSS -->
-    <div class="neon-lines">
-      <div class="neon-line left"></div>
-      <div class="neon-line right"></div>
-    </div>
-    <div class="animated-background"></div>
-    <section id="banner"><h1>This site is still under construction.</h1></section>
-
-    <header><nav>
-        <ul id="nav-btns">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="artwork.html">Artwork</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a class="active">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul></nav><img src="Assets/Images/logo.png" alt="Logo" class="logo"></header>
-
-    <div class="wrapper">
-      <h1>Project Repository</h1>
-      <div class='card'> <h1>Working on figuring this part out.</h1></div>
-    </div>
-
-    <footer><p class="copy-symbol">&copy; Crxzy 2024</p></footer>
-    <script src="Scripts/script.js"></script>
-  </body>
+    <head>
+        <title>Casa Del Crxzy</title>
+        <link rel="icon" href="Assets/Images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="Assets/Images/logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Styles/style.css">
+    </head>
+    <body>
+        <!-- Elements to be changed by CSS -->
+        <div class="neon-lines">
+            <div class="neon-line left"></div>
+            <div class="neon-line right"></div>
+        </div>
+        <div class="animated-background"></div>
+        <section id="banner">
+            <h1>This site is still under construction.</h1>
+        </section>
+        <header>
+            <nav>
+                <ul id="nav-btns">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artwork.html">Artwork</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav><img src="Assets/Images/logo.png" alt="Logo" class="logo">
+        </header>
+        
+        <div class="wrapper">  
+           <h1>Project Repository</h1>     
+            <div class="containerType1">
+                <img class="t1-items t1-img" src="Assets/Images/Projects/javaEngine.png"></img>
+                <div class="t1-items t1-header">Basic Java Game Engine</div>
+                <div class="t1-items t1-desc">A very basic Engine built in java. Very Flexible, using a game loop inspired from Notch.</div>
+                <button class="t1-items t1-btn button-3" onclick='window.location.href="https://github.com/ICrxzy/Basic-Java-GameLoop"' type="button">Github</button>
+            </div>
+            <div class="containerType1">
+                <img class="t1-items t1-img" src="Assets/Images/Projects/CrazyXV.png"></img>
+                <div class="t1-items t1-header">CrazyXV BO2 Mod Menu</div>
+                <div class="t1-items t1-desc">An old project from my Early days as a teenager. My very first programming project. A mod menu built to run on Jailbroken PS3s and PCs. This version is decompiled and must be compiled before use.</div>
+                <button class="t1-items t1-btn button-3" onclick='window.location.href="https://github.com/ICrxzy/CrxzyXV-Original-Decompiled-Mod-Menu"' type="button">Github</button>
+            </div>
+        </div>
+        <footer>
+            <p class="copy-symbol">&copy; Crxzy 2024</p>
+        </footer>
+        <script src="Scripts/script.js"></script>
+    </body>
 </html>
